@@ -1,56 +1,323 @@
+/* ==========================================================================
+   TEAM CARD STYLES — three animated variants
+   Card #11  .p11  Diagonal Clip-Path Wipe   (Heads, Executives)
+   Card #22  .p22  Holographic Light Sweep   (Board, Leads)
+   Card #25  .p25  3D Cursor-Tilt Pop-Out    (Mentor-Mentee)
+   ========================================================================== */
 
+/* ── Shared base across all three variants ── */
+.p11, .p22, .p25 {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.p11 .p-name,
+.p22 .p-name,
+.p25 .p-name {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.p11 .p-role,
+.p22 .p-role,
+.p25 .p-role {
+  font-size: 0.84rem;
+  color: #9ca3af;
+  margin-top: 0.18rem;
+  line-height: 1.3;
+}
+
+.p11 .acc-btn,
+.p22 .acc-btn,
+.p25 .acc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-top: 0.65rem;
+  padding: 0.42rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #000000;
+  background: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.p22 .workplace-tag,
+.p25 .workplace-tag {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  margin-top: 0.45rem;
+}
+
+.p22 .pos-detail,
+.p25 .pos-detail {
+  font-size: 0.76rem;
+  color: #d1d5db;
+  margin-top: 0.35rem;
+  line-height: 1.35;
+}
+
+.p22 .acc-btn:hover,
+.p25 .acc-btn:hover {
+  background: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════════════════
+   CARD #11 — DIAGONAL CLIP-PATH WIPE
+   ══════════════════════════════════════════════ */
+.p11 {
+  width: 245px;
+  background: #000000;
+}
+
+.p11 .photo-box {
+  width: 100%;
+  height: 295px;
+  position: relative;
+  overflow: hidden;
+  background: #181c26;
+}
+
+.p11 .photo-box img,
+.p11 .photo-box svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.p11 .diag-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.92), rgba(6, 78, 59, 0.96));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.2rem;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.p11:hover .diag-layer {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.p11 .info-below {
+  padding: 0.75rem 0;
+}
+
+.p11 .workplace-tag {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #a7f3d0;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(167, 243, 208, 0.3);
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+}
+
+.p11 .pos-detail {
+  font-size: 0.76rem;
+  color: #ecfdf5;
+  margin-top: 0.55rem;
+  line-height: 1.35;
+}
+
+.p11 .acc-btn:hover {
+  background: #a7f3d0;
+  transform: translateY(-2px);
+}
+
+/* ══════════════════════════════════════════════
+   CARD #22 — HOLOGRAPHIC LIGHT SWEEP
+   ══════════════════════════════════════════════ */
+.p22 {
+  width: 245px;
+  height: 355px;
+  position: relative;
+  overflow: hidden;
+  background: #12151f;
+}
+
+.p22 img,
+.p22 svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Specular light-sweep beam */
+.p22::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 60%;
+  height: 100%;
+  z-index: 4;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.65s ease;
+  pointer-events: none;
+}
+
+.p22:hover::before {
+  left: 160%;
+}
+
+.p22:hover img,
+.p22:hover svg {
+  transform: scale(1.04);
+}
+
+.p22 .holo-cap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 2.2rem 1.1rem 1.1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.96) 35%, transparent 100%);
+}
+
+.p22 .extra-on {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.35s ease;
+}
+
+.p22:hover .extra-on {
+  max-height: 150px;
+  opacity: 1;
+}
+
+/* ══════════════════════════════════════════════
+   CARD #25 — 3D CURSOR-TILT + POP-OUT DRAWER
+   ══════════════════════════════════════════════ */
+/* Reserves unhovered grid slot height so hover drawer expansion never reflows sibling rows */
+.p25-slot {
+  width: 245px;
+  height: 365px;
+  position: relative;
+}
+
+.p25 {
+  width: 245px;
+  background: #000000;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease,
+              background 0.3s ease,
+              border-radius 0.3s ease;
+}
+
+.p25 .photo-box {
+  width: 100%;
+  height: 295px;
+  position: relative;
+  overflow: hidden;
+  background: #181c26;
+}
+
+.p25 .photo-box img,
+.p25 .photo-box svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Cursor-following radial glow over the photo */
+.p25 .photo-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(56, 189, 248, 0.34),
+    rgba(255, 255, 255, 0.12) 35%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.p25 .info-below {
+  padding: 0.75rem 0.2rem 0.4rem;
+  transition: padding 0.3s ease;
+}
+
+.p25 .reveal-below {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.p25:hover {
+  z-index: 45;
+  background: #0f131c;
+  border-radius: 10px;
+  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.96),
+              0 0 24px rgba(56, 189, 248, 0.24),
+              0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.p25:hover .photo-box::after {
+  opacity: 1;
+}
+
+.p25:hover .info-below {
+  padding: 0.85rem;
+}
+
+.p25:hover .reveal-below {
+  max-height: 150px;
+  opacity: 1;
+}
+
+/* ── Legacy .teamImg / .teamName kept for TeamList and other consumers ── */
 .teamImg {
   height: 19rem;
   width: 15rem;
   background-color: aliceblue;
-}
-.teamName h4 {
-  font-size: 1rem;
-  font-family: "Poppins";
-}
-.teamName p {
-  color: var(--color-light);
-  font-size: 0.85rem;
-  font-family: "Poppins";
-  
-  
-}
-
-.teamImg{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 820px) {
-  .teamName p {
-    width: 30vw;
-  }
+.teamName h4 {
+  font-size: 1rem;
+  font-family: "Poppins";
 }
 
-@media screen and (max-width: 624px) {
-  .teamName p {
-    width: 35vw;
-  }
-}
-
-@media screen and (max-width: 535px) {
-  .teamName p {
-    width: 40vw;
-  }
-}
-@media screen and (max-width: 468px) {
-  .teamName p {
-    width: 45vw;
-  }
-}
-@media screen and (max-width: 468px) {
-  .teamName p {
-    width: 50vw;
-  } 
-}
-@media screen and (max-width: 390px) {
-  .teamName p {
-    width: 50vw;
-  }
+.teamName p {
+  color: var(--color-light);
+  font-size: 0.85rem;
+  font-family: "Poppins";
 }

@@ -16,62 +16,98 @@ export const teamBoard = [
     {
         name: 'Mr. Varun Rana',
         title: 'Salaah Governing Committee',
-        img: varun
+        img: varun,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Mr. Rohit Singh',
         title: 'Salaah Governing Committee',
-        img: rohit
+        img: rohit,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Mr. Utkarsh Singh',
         title: 'Salaah Governing Committee',
-        img: utkarsh
+        img: utkarsh,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Ms. Sakshi Verma',
         title: 'Salaah Governing Committee',
-        img: sakshi
+        img: sakshi,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Ms. Shruti Singh',
         title: 'Salaah Governing Committee',
-        img: shruti
+        img: shruti,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
 
     {
         name: 'Mr. Utkarsh Goel',
         title: 'Salaah Governing Committee',
-        img: utkarshG
+        img: utkarshG,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Mr. Rohit Choudhary',
         title: 'Salaah Governing Committee',
-        img: rohitCH
+        img: rohitCH,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Ms. Rashmi Singh',
         title: 'Salaah Governing Committee',
-        img: rashmi
+        img: rashmi,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Ms. Aarushi Rai',
         title: 'Salaah Governing Committee',
-        img: aarushi
+        img: aarushi,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Mr. Siddhant Singh',
         title: 'Salaah Governing Committee',
-        img: siddhant
+        img: siddhant,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Mr. Yash Suri',
         title: 'Salaah Governing Committee',
-        img: yashsuri
+        img: yashsuri,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Ms. Vritti Mehrotra',
         title: 'Salaah Governing Committee',
-        img: vrittimehrotra
+        img: vrittimehrotra,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
 ]

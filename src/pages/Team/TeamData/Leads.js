@@ -1,5 +1,5 @@
 import Rakesh from '../../../assets/team/Rakesh.jpeg'
-import  Ankur from '../../../assets/team/Ankur.jpg'
+import Ankur from '../../../assets/team/Ankur.jpg'
 import anshita from '../../../assets/team/anshita.jpg'
 import suraj from '../../../assets/team/suraj.jpeg'
 import anshika from '../../../assets/team/anshika.jpg'
@@ -13,45 +13,69 @@ export const teamLeads = [
     {
         name: "Mr. Rakesh Kundu",
         title: 'Technical Operations',
-        img: Rakesh
-    },   
+        img: Rakesh,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
+    },
     //social media 
     {
         name: "Mr. Ankur",
         title: "Social Media & Marketing",
         img: Ankur,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: "Ms. Anshita Varshney",
         title: "Social Media & Marketing",
         img: anshita,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: "Mr. Suraj",
         title: "Social Media & Marketing",
         img: suraj,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     //content and Documentation:-
     {
         name: "Ms. Anshika Choudhary",
         title: "Content & Documentation",
         img: anshika,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     //outreach
     {
         name: "Ms. Soumya Baranwal",
         title: "Outreach",
         img: soumya,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     {
         name: "Ms. Tanushree Saxena",
         title: "Outreach",
-        img: tanushree
+        img: tanushree,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
     //planning :-
     {
-        name: "Mr. Avinash Kumar Shukla ",
+        name: "Mr. Avinash Kumar Shukla",
         title: "Planning & Strategy",
         img: avinash,
+        position: 'Position',
+        company: 'ABES Engineering College',
+        linkedin: 'https://www.linkedin.com'
     },
 ]

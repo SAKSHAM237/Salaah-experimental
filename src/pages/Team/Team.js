@@ -1,5 +1,5 @@
 import React from "react";
-import { Card11, Card22, Card25 } from "./TeamCards";
+import { Card22 } from "./TeamCards";
 // import AnimatedCursor from "react-animated-cursor";
 import { motion } from 'framer-motion';
 import Footer from "../../components/Footer";
@@ -43,13 +43,13 @@ const Team = () => {
               Behind the Scenes
             </h1>
           </div>
-          {/* Salaah Heads — Card #11: Diagonal Clip-Path Wipe */}
+          {/* Salaah Heads — Card #22: Holographic Light Sweep */}
           <div id="team-section">
             <h1 className="team_headline Regular">Salaah Heads</h1>
             <div style={{ marginBottom: "7rem" }}>
               <div className="teamCard_grid">
                 {teamHeads.map((member, i) => (
-                  <Card11 key={i} {...member} />
+                  <Card22 key={i} {...member} />
                 ))}
               </div>
             </div>
@@ -67,31 +67,31 @@ const Team = () => {
             </div>
           </div>
 
-          {/* Mentor Mentee Board — Card #25: 3D Cursor-Tilt Pop-Out */}
+          {/* Mentor Mentee Board — Card #22: Holographic Light Sweep */}
           <div id="team-section">
             <h1 className="team_headline Regular">Mentor Mentee Board</h1>
             <div style={{ marginBottom: "7rem" }}>
               <div className="teamCard_grid">
                 {mentors.map((member, i) => (
-                  <Card25 key={i} {...member} />
+                  <Card22 key={i} {...member} />
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Executives — Card #11: Diagonal Clip-Path Wipe (4th section cycles back) */}
+          {/* Executives — Card #22: Holographic Light Sweep */}
           <div id="team-section">
             <h1 className="team_headline Regular">Executives</h1>
             <div style={{ marginBottom: "7rem" }}>
               <div className="teamCard_grid">
                 {teamExec.map((member, i) => (
-                  <Card11 key={i} {...member} />
+                  <Card22 key={i} {...member} />
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Leads — Card #22: Holographic Light Sweep (5th section) */}
+          {/* Leads — Card #22: Holographic Light Sweep */}
           <div id="team-section">
             <h1 className="team_headline Regular">Leads</h1>
             <div style={{ marginBottom: "7rem" }}>

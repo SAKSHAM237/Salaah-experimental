@@ -7,24 +7,24 @@ export const teamHeads = [
         name: 'Sh. Sachin Kumar Goel',
         title: 'Salaah Convener & VP-ABESEC',
         img: sachin,
-        position: 'Position',
-        company: 'ABES Engineering College',
+        position: 'CEO',
+        company: 'Google',
         linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Mr. Kunal Tyagi',
         title: 'Salaah Incharge & Alumni ABESEC',
         img: kunal,
-        position: 'Position',
-        company: 'ABES Engineering College',
+        position: 'CEO',
+        company: 'Google',
         linkedin: 'https://www.linkedin.com'
     },
     {
         name: 'Mr. Prabhat Singh',
         title: 'Salaah Faculty Head & HOD CSDS',
         img: prabhat,
-        position: 'Position',
-        company: 'ABES Engineering College',
+        position: 'CEO',
+        company: 'Google',
         linkedin: 'https://www.linkedin.com'
     }
 ]

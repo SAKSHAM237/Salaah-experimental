@@ -1,5 +1,11 @@
 import React from "react";
-import { Card22 } from "./TeamCards";
+import {
+  Card22,
+  CardDesign1,
+  CardDesign2,
+  CardDesign3,
+  CardDesign4,
+} from "./TeamCards";
 // import AnimatedCursor from "react-animated-cursor";
 import { motion } from 'framer-motion';
 import Footer from "../../components/Footer";
@@ -55,14 +61,23 @@ const Team = () => {
             </div>
           </div>
 
-          {/* Board of Governance — Card #22: Holographic Light Sweep */}
+          {/* Board of Governance — 4 distinct CSS card designs across the 4 columns for testing */}
           <div id="team-section">
             <h1 className="team_headline Regular">Board of Governance</h1>
             <div style={{ marginBottom: "7rem" }}>
               <div className="teamCard_grid">
-                {teamBoard.map((member, i) => (
-                  <Card22 key={i} {...member} />
-                ))}
+                {teamBoard.map((member, i) => {
+                  const col = i % 4;
+                  if (col === 0) {
+                    return <CardDesign1 key={i} {...member} />;
+                  } else if (col === 1) {
+                    return <CardDesign2 key={i} {...member} hue={203} />;
+                  } else if (col === 2) {
+                    return <CardDesign3 key={i} {...member} hue={116} />;
+                  } else {
+                    return <CardDesign4 key={i} {...member} />;
+                  }
+                })}
               </div>
             </div>
           </div>

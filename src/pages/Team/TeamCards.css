@@ -29,6 +29,7 @@
   line-height: 1.3;
 }
 
+.acc-btn,
 .p11 .acc-btn,
 .p22 .acc-btn,
 .p25 .acc-btn {
@@ -45,8 +46,10 @@
   border-radius: 6px;
   text-decoration: none;
   transition: transform 0.2s ease, background 0.2s ease;
+  width: fit-content;
 }
 
+.workplace-tag,
 .p22 .workplace-tag,
 .p25 .workplace-tag {
   display: inline-block;
@@ -58,8 +61,10 @@
   padding: 0.2rem 0.55rem;
   border-radius: 5px;
   margin-top: 0.45rem;
+  width: fit-content;
 }
 
+.pos-detail,
 .p22 .pos-detail,
 .p25 .pos-detail {
   font-size: 0.76rem;
@@ -68,6 +73,7 @@
   line-height: 1.35;
 }
 
+.acc-btn:hover,
 .p22 .acc-btn:hover,
 .p25 .acc-btn:hover {
   background: #38bdf8;
@@ -194,8 +200,48 @@
   left: 0;
   right: 0;
   z-index: 3;
-  padding: 2.2rem 1.1rem 1.1rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.96) 35%, transparent 100%);
+  padding: 0.95rem 1rem 0.55rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.46) 0%,
+    rgba(0, 0, 0, 0.22) 55%,
+    transparent 100%
+  );
+  transition: padding 0.35s ease;
+}
+
+/* Darken the backdrop smoothly only on hover when extra details expand */
+.p22 .holo-cap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 35%,
+    rgba(0, 0, 0, 0.52) 78%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.p22:hover .holo-cap {
+  padding: 1.8rem 1rem 1rem;
+}
+
+.p22:hover .holo-cap::before {
+  opacity: 1;
+}
+
+.p22 .p-name {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.65);
+}
+
+.p22 .p-role {
+  color: #e5e7eb;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.65);
 }
 
 .p22 .extra-on {
@@ -320,4 +366,517 @@
   color: var(--color-light);
   font-size: 0.85rem;
   font-family: "Poppins";
+}
+
+/* Shared detail fields styling */
+.card-bio {
+  font-size: 0.74rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin-top: 0.45rem;
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: left;
+}
+
+.cd1-card-data .card-bio {
+  color: #4b5563;
+}
+
+.cd4-info .card-bio {
+  text-align: center;
+}
+
+/* ── Frosted glass plate for high-contrast resting text ── */
+.cd-resting-plate {
+  background: rgba(10, 15, 26, 0.76);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.52rem 0.82rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.65);
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* ══════════════════════════════════════════════
+   DESIGN 1 : SLIDE-UP FLOATING DATA CARD (Pure CSS Keyframes)
+   ══════════════════════════════════════════════ */
+.cd1-card {
+  width: 245px;
+  height: 355px;
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #111827;
+}
+
+.cd1-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  display: block;
+}
+
+.cd1-resting-info {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cd1-resting-name,
+.cd2-resting-name,
+.cd3-data-name,
+.cd4-resting-name {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  line-height: 1.25;
+}
+
+.cd1-resting-role,
+.cd2-resting-role,
+.cd3-data-role,
+.cd4-resting-role {
+  font-size: 0.76rem;
+  color: #d1d5db;
+  margin-top: 0.18rem;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  line-height: 1.3;
+}
+
+.cd1-card-data {
+  width: 218px;
+  background: #ffffff;
+  color: #111827;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: -15rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 0.8s 0.8s;
+}
+
+.cd1-card:hover .cd1-card-data {
+  animation: cd1-show-data 1s forwards;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.cd1-card:hover {
+  animation: cd1-remove-overflow 2s forwards;
+}
+
+.cd1-card:hover .cd1-resting-info {
+  opacity: 0;
+}
+
+.cd1-card:not(:hover) {
+  animation: cd1-show-overflow 2s forwards;
+}
+
+.cd1-card:not(:hover) .cd1-card-data {
+  animation: cd1-remove-data 1s forwards;
+}
+
+.cd1-data-name {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.cd1-data-role {
+  font-size: 0.76rem;
+  color: #4b5563;
+  margin-top: 0.15rem;
+}
+
+.cd1-card-data .workplace-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  margin-top: 0.35rem;
+}
+
+.cd1-card-data .pos-detail {
+  font-size: 0.74rem;
+  color: #374151;
+  margin-top: 0.2rem;
+}
+
+.cd1-card-data .cd1-btn {
+  background: #111827;
+  color: #ffffff;
+  margin-top: 0.5rem;
+}
+
+.cd1-card-data .cd1-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+@keyframes cd1-show-data {
+  50% { transform: translateY(-17rem); }
+  100% { transform: translateY(-14.2rem); }
+}
+
+@keyframes cd1-remove-overflow {
+  to { overflow: initial; }
+}
+
+@keyframes cd1-remove-data {
+  0% { transform: translateY(-14.2rem); }
+  50% { transform: translateY(-17rem); }
+  100% { transform: translateY(0.5rem); }
+}
+
+@keyframes cd1-show-overflow {
+  0% { overflow: initial; pointer-events: none; }
+  50% { overflow: hidden; }
+}
+
+/* ══════════════════════════════════════════════
+   DESIGN 2 : NEON GLOW BORDER + 3D ROTATING GLASS OVERLAYS (CSS + JS/React Toggle)
+   ══════════════════════════════════════════════ */
+.cd2-card-profile {
+  position: relative;
+  width: 245px;
+  height: 355px;
+  border-radius: 2rem;
+  border: 3px solid #ffffff;
+  overflow: hidden;
+  background: #000000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cd2-card-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cd2-card-profile:hover .cd2-card-bg {
+  transform: scale(1.15);
+}
+
+.cd2-resting-scrim {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Floating trigger button (placed above the bottom name plate) */
+.cd2-btn-info {
+  position: absolute;
+  bottom: 4.2rem;
+  right: 0.85rem;
+  background: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  z-index: 20;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 0.3rem;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.cd2-btn-info:hover {
+  box-shadow: 0 0 24px #ffffff;
+  transform: translateY(-2px);
+}
+
+.cd2-icon-plus {
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.cd2-rotate {
+  transform: rotate(-135deg);
+}
+
+/* Full glass profile overlay (pivots from bottom-right) */
+.cd2-info-data {
+  position: absolute;
+  inset: 0;
+  padding: 1.8rem 1.2rem;
+  background: rgba(10, 15, 26, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 1.8rem;
+  transform: rotate3d(1, 1, 300, 180deg);
+  transform-origin: bottom right;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cd2-show-info {
+  transform: rotate3d(1, 1, 1, 0deg) !important;
+}
+
+/* ══════════════════════════════════════════════
+   DESIGN 3 : NEON CLIP-PATH CIRCULAR REVEAL CARD (Pure CSS)
+   ══════════════════════════════════════════════ */
+.cd3-card-article {
+  --hue: 116;
+  position: relative;
+  width: 245px;
+  height: 355px;
+  border-radius: 2rem;
+  overflow: hidden;
+  background: #111827;
+}
+
+.cd3-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cd3-card-article:hover .cd3-card-img {
+  transform: scale(1.08);
+}
+
+.cd3-card-shadow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 65%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+.cd3-card-data {
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  color: #ffffff;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Top-right neon trigger circle */
+.cd3-card-clip {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: hsl(var(--hue), 90%, 50%);
+  box-shadow: 0 0 16px 4px hsl(var(--hue), 90%, 50%);
+  color: #000000;
+  font-weight: 900;
+  font-size: 1.2rem;
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.cd3-card-article:hover .cd3-card-clip {
+  transform: rotate(-45deg);
+}
+
+/* Clipped frosted-glass overlay */
+.cd3-info {
+  position: absolute;
+  inset: 0;
+  padding: 2.5rem 1.2rem 1.5rem;
+  color: #ffffff;
+  background: rgba(10, 15, 26, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  clip-path: circle(12px at 85% 8%);
+  transition: clip-path 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 4;
+}
+
+.cd3-info:hover,
+.cd3-card-clip:hover ~ .cd3-info {
+  clip-path: circle(140% at 85% 8%);
+}
+
+/* ══════════════════════════════════════════════
+   DESIGN 4 : SHIELD-SHAPE CLIP-PATH CARD (Shield-Cut Photo + Overlapping Name Bar)
+   ══════════════════════════════════════════════ */
+.cd4-card {
+  position: relative;
+  width: 245px;
+  height: 355px;
+}
+
+.cd4-shield-frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem 1rem 7.5rem 7.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  background: #0f172a;
+  z-index: 1;
+}
+
+.cd4-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem 1rem 7.5rem 7.5rem;
+  transition: transform 0.4s ease;
+}
+
+.cd4-card:hover .cd4-full-img {
+  transform: scale(1.06);
+}
+
+/* Resting name bar: aligned with all other cards, overlapping the bottom of the photo cut */
+.cd4-resting-info {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  right: 0.85rem;
+  z-index: 5;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cd4-card:hover .cd4-resting-info {
+  opacity: 0;
+}
+
+/* Glowing eye info trigger button (clean, centered, standalone) */
+.cd4-info-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 800;
+  font-family: 'Segoe UI', sans-serif;
+  font-style: italic;
+  font-size: 1rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.75);
+  z-index: 15;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cd4-info-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 1);
+}
+
+/* Shield overlay, initially clipped to 0px at button center (zero dark border artifact) */
+.cd4-info {
+  position: absolute;
+  inset: 0;
+  padding: 1.5rem 1.1rem;
+  background: linear-gradient(180deg, #090d16 0%, #0f172a 100%);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 1rem 1rem 7.5rem 7.5rem;
+  clip-path: circle(0px at calc(100% - 26px) 26px);
+  transition: clip-path 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Staggered entrance offsets */
+.cd4-info-avatar {
+  transform: translateX(-3rem);
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin-bottom: 0.4rem;
+}
+
+.cd4-info-avatar-img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #38bdf8;
+}
+
+.cd4-info-data {
+  transform: translateX(-4rem);
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cd4-info:hover,
+.cd4-info-icon:hover ~ .cd4-info,
+.cd4-show-info {
+  clip-path: circle(140% at calc(100% - 26px) 26px) !important;
+  z-index: 20;
+}
+
+.cd4-info:hover .cd4-info-avatar,
+.cd4-info-icon:hover ~ .cd4-info .cd4-info-avatar,
+.cd4-show-info .cd4-info-avatar,
+.cd4-info:hover .cd4-info-data,
+.cd4-info-icon:hover ~ .cd4-info .cd4-info-data,
+.cd4-show-info .cd4-info-data {
+  transform: translateX(0);
 }

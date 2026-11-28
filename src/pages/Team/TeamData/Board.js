@@ -19,7 +19,8 @@ export const teamBoard = [
         img: varun,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Leading strategic governance, mentorship initiatives, and student empowerment programs across campus.'
     },
     {
         name: 'Mr. Rohit Singh',
@@ -27,7 +28,8 @@ export const teamBoard = [
         img: rohit,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Focused on student mentorship, leadership excellence, and building industry-academia collaboration.'
     },
     {
         name: 'Mr. Utkarsh Singh',
@@ -35,7 +37,8 @@ export const teamBoard = [
         img: utkarsh,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Passionate about engineering innovation, community hackathons, and fostering technical talent.'
     },
     {
         name: 'Ms. Sakshi Verma',
@@ -43,7 +46,8 @@ export const teamBoard = [
         img: sakshi,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Dedicated to community outreach, career development sessions, and driving inclusive leadership.'
     },
     {
         name: 'Ms. Shruti Singh',
@@ -51,16 +55,17 @@ export const teamBoard = [
         img: shruti,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Managing community governance, student guidance initiatives, and organizing annual flagship summits.'
     },
-
     {
         name: 'Mr. Utkarsh Goel',
         title: 'Salaah Governing Committee',
         img: utkarshG,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Driving technical workshops, competitive programming tracks, and open-source contributions.'
     },
     {
         name: 'Mr. Rohit Choudhary',
@@ -68,7 +73,8 @@ export const teamBoard = [
         img: rohitCH,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Steering organizational strategy, alumni network relationships, and career acceleration bootcamps.'
     },
     {
         name: 'Ms. Rashmi Singh',
@@ -76,7 +82,8 @@ export const teamBoard = [
         img: rashmi,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Coordinating high-impact student chapters, mentorship circles, and cross-domain collaborative projects.'
     },
     {
         name: 'Ms. Aarushi Rai',
@@ -84,7 +91,8 @@ export const teamBoard = [
         img: aarushi,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Engaging student innovators, orchestrating leadership talks, and cultivating creative growth pipelines.'
     },
     {
         name: 'Mr. Siddhant Singh',
@@ -92,7 +100,8 @@ export const teamBoard = [
         img: siddhant,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Guiding upcoming developers in full-stack architecture, research papers, and technical competitions.'
     },
     {
         name: 'Mr. Yash Suri',
@@ -100,7 +109,8 @@ export const teamBoard = [
         img: yashsuri,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Passionate about creative media, event branding, and elevating community engagement touchpoints.'
     },
     {
         name: 'Ms. Vritti Mehrotra',
@@ -108,6 +118,7 @@ export const teamBoard = [
         img: vrittimehrotra,
         position: 'CEO',
         company: 'Google',
-        linkedin: 'https://www.linkedin.com'
+        linkedin: 'https://www.linkedin.com',
+        bio: 'Directing community outreach programs, soft-skills bootcamps, and holistic student guidance.'
     },
 ]

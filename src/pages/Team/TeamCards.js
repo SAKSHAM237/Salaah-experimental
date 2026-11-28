@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./TeamCards.css";
 
 const hasText = (val) => typeof val === "string" && val.trim().length > 0;
@@ -17,10 +17,11 @@ const LinkedInIcon = () => (
 );
 
 /* Shared detail fields rendered only when non-empty */
-const CardDetails = ({ company, position, linkedin }) => (
+const CardDetails = ({ company, position, linkedin, bio }) => (
   <>
     {hasText(company) && <div className="workplace-tag">@ {company}</div>}
     {hasText(position) && <div className="pos-detail">{position}</div>}
+    {hasText(bio) && <p className="card-bio">{bio}</p>}
     {hasText(linkedin) && (
       <a
         href={linkedin}
@@ -130,6 +131,223 @@ export const Card25 = ({ name, title, img, position, company, linkedin }) => {
               <CardDetails company={company} position={position} linkedin={linkedin} />
             </div>
           )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ══════════════════════════════════════════════
+   DESIGN 1: Slide-Up Floating Data Card (Pure CSS Keyframes)
+   ══════════════════════════════════════════════ */
+export const CardDesign1 = ({
+  name,
+  title,
+  img,
+  position,
+  company,
+  linkedin,
+  bio,
+}) => {
+  return (
+    <div className="cd1-card">
+      <img src={img} alt={name} className="cd1-card-img" loading="lazy" />
+      <div className="cd1-resting-info">
+        <div className="cd-resting-plate">
+          <div className="cd1-resting-name">{name}</div>
+          {hasText(title) && <div className="cd1-resting-role">{title}</div>}
+        </div>
+      </div>
+      <div className="cd1-card-data">
+        <div className="cd1-data-name">{name}</div>
+        {hasText(company) && <div className="workplace-tag">@ {company}</div>}
+        {hasText(position) && <div className="pos-detail">{position}</div>}
+        {hasText(bio) && <p className="card-bio">{bio}</p>}
+        {hasText(linkedin) && (
+          <a
+            href={linkedin}
+            className="acc-btn cd1-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon /> LinkedIn
+          </a>
+        )}
+      </div>
+    </div>
+  );
+};
+
+/* ══════════════════════════════════════════════
+   DESIGN 2: Neon Glow Border + 3D Rotating Glass Overlay (CSS + React Hover/Toggle)
+   ══════════════════════════════════════════════ */
+export const CardDesign2 = ({
+  name,
+  title,
+  img,
+  position,
+  company,
+  linkedin,
+  bio,
+  hue = 203,
+}) => {
+  const [showInfo, setShowInfo] = useState(false);
+
+  return (
+    <div
+      className="cd2-card-profile"
+      style={{
+        "--accent-hue": hue,
+        boxShadow: `0 0 36px hsla(${hue}, 100%, 52%, 0.7)`,
+      }}
+      onMouseLeave={() => {
+        setShowInfo(false);
+      }}
+    >
+      <img src={img} alt={name} className="cd2-card-bg" loading="lazy" />
+
+      {/* Info trigger button (placed above the name plate) */}
+      <button
+        type="button"
+        className="cd2-btn-info"
+        onMouseEnter={() => {
+          setShowInfo(true);
+        }}
+        onClick={() => {
+          setShowInfo(!showInfo);
+        }}
+        title="Info"
+        aria-label="Toggle profile information"
+      >
+        <span>Info</span>
+        <i className={`cd2-icon-plus ${showInfo ? "cd2-rotate" : ""}`}>+</i>
+      </button>
+
+      {/* Resting name scrim / plate (positioned below info button at bottom) */}
+      <div className="cd2-resting-scrim">
+        <div className="cd-resting-plate">
+          <div className="cd2-resting-name">{name}</div>
+          {hasText(title) && <div className="cd2-resting-role">{title}</div>}
+        </div>
+      </div>
+
+      {/* Full glass profile overlay (reveals on hover of Info or overlay) */}
+      <div
+        className={`cd2-info-data ${showInfo ? "cd2-show-info" : ""}`}
+        onMouseEnter={() => setShowInfo(true)}
+      >
+        <div className="p-name">{name}</div>
+        <CardDetails
+          company={company}
+          position={position}
+          linkedin={linkedin}
+          bio={bio}
+        />
+      </div>
+    </div>
+  );
+};
+
+/* ══════════════════════════════════════════════
+   DESIGN 3: Neon Clip-Path Circular Reveal Card (Pure CSS)
+   ══════════════════════════════════════════════ */
+export const CardDesign3 = ({
+  name,
+  title,
+  img,
+  position,
+  company,
+  linkedin,
+  bio,
+  hue = 116,
+}) => {
+  return (
+    <div className="cd3-card-article" style={{ "--hue": hue }}>
+      <img src={img} alt={name} className="cd3-card-img" loading="lazy" />
+      <div className="cd3-card-shadow" />
+      <div className="cd3-card-data">
+        <div className="cd-resting-plate">
+          <div className="cd3-data-name">{name}</div>
+          {hasText(title) && <div className="cd3-data-role">{title}</div>}
+        </div>
+      </div>
+
+      {/* Top-right neon trigger circle */}
+      <div className="cd3-card-clip" title="Hover for details">
+        <span>+</span>
+      </div>
+
+      {/* Clipped frosted-glass overlay */}
+      <div className="cd3-info">
+        <div className="p-name">{name}</div>
+        <CardDetails
+          company={company}
+          position={position}
+          linkedin={linkedin}
+          bio={bio}
+        />
+      </div>
+    </div>
+  );
+};
+
+/* ══════════════════════════════════════════════
+   DESIGN 4: Shield-Shape Clip-Path Card With Staggered Slide-In (Pure CSS)
+   ══════════════════════════════════════════════ */
+export const CardDesign4 = ({
+  name,
+  title,
+  img,
+  position,
+  company,
+  linkedin,
+  bio,
+}) => {
+  const [showInfo, setShowInfo] = useState(false);
+
+  return (
+    <div className="cd4-card" onMouseLeave={() => setShowInfo(false)}>
+      {/* Photo frame with shield shape U-cut */}
+      <div className="cd4-shield-frame">
+        <img src={img} alt={name} className="cd4-full-img" loading="lazy" />
+      </div>
+
+      {/* Glowing eye info trigger button */}
+      <button
+        type="button"
+        className="cd4-info-icon"
+        onMouseEnter={() => setShowInfo(true)}
+        onClick={() => setShowInfo(!showInfo)}
+        title="Details"
+        aria-label="View details"
+      >
+        i
+      </button>
+
+      {/* Resting name plate: aligned with other cards at bottom, overlapping the photo cut */}
+      <div className="cd4-resting-info">
+        <div className="cd-resting-plate">
+          <div className="cd4-resting-name">{name}</div>
+          {hasText(title) && <div className="cd4-resting-role">{title}</div>}
+        </div>
+      </div>
+
+      {/* Shield overlay, expands on hover */}
+      <div
+        className={`cd4-info ${showInfo ? "cd4-show-info" : ""}`}
+        onMouseEnter={() => setShowInfo(true)}
+      >
+        <div className="cd4-info-avatar">
+          <img src={img} alt={name} className="cd4-info-avatar-img" loading="lazy" />
+        </div>
+        <div className="cd4-info-data">
+          <div className="p-name">{name}</div>
+          <CardDetails
+            company={company}
+            position={position}
+            linkedin={linkedin}
+            bio={bio}
+          />
         </div>
       </div>
     </div>
